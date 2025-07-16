@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бизнес-квартал "Ясенево" - Офисы класса А</title>
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Шапка */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0056b3;
+        }
+        
+        .contact-phone {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        /* Герой-секция */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x800') no-repeat center/cover;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 5px;
+        }
+        
+        /* Секция о проекте */
+        .about {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: #0056b3;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Секция планировок */
+        .layouts {
+            padding: 80px 0;
+        }
+        
+        .layout-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .layout-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .layout-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .layout-image {
+            height: 200px;
+            background-color: #eee;
+        }
+        
+        .layout-info {
+            padding: 20px;
+        }
+        
+        .layout-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+        
+        /* Секция инфраструктуры */
+        .infrastructure {
+            padding: 80px 0;
+            background-color: #f0f7ff;
+        }
+        
+        .infra-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .infra-item {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        /* Футер */
+        footer {
+            background-color: #002b5c;
+            color: white;
+            padding: 50px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contacts a {
+            color: white;
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">БК "Ясенево"</div>
+                <a href="tel:+74952214022" class="contact-phone">+7 (495) 221-40-22</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero">
+        <div class="container">
+            <h1>Офисы класса "А" в бизнес-квартале "Ясенево"</h1>
+            <p>Уникальный проект в динамично развивающемся районе Москвы</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">1 мин от метро</div>
+                <div class="stat-item">от 60 м²</div>
+                <div class="stat-item">Сдача в 2024 г.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О проекте -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">О проекте</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Бизнес-квартал "Ясенево" предлагает современные офисные помещения класса "А" с продуманной инфраструктурой и удобной транспортной доступностью.</p>
+                    <p>Повышенный класс чистоты воздуха, открывающиеся окна с дистанционным управлением, мировое увлажнение воздуха.</p>
+                    <p>Возможна отделка офиса на выбор. Офисная кухня в каждом блоке.</p>
+                    <button style="margin-top: 20px; padding: 12px 25px; background-color: #0056b3; color: white; border: none; border-radius: 5px; cursor: pointer;">Узнать больше</button>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Бизнес-квартал Ясенево">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Планировки -->
+    <section class="layouts">
+        <div class="container">
+            <h2 class="section-title">Выбирайте планировку для любого бизнеса</h2>
+            
+            <div class="layout-cards">
+                <div class="layout-card">
+                    <div class="layout-image"></div>
+                    <div class="layout-info">
+                        <h3 class="layout-title">ОФИС, 72 м²</h3>
+                        <p>Открытое пространство с возможностью зонирования</p>
+                    </div>
+                </div>
+                
+                <div class="layout-card">
+                    <div class="layout-image"></div>
+                    <div class="layout-info">
+                        <h3 class="layout-title">ОФИС, 120 м²</h3>
+                        <p>Просторный офис с отдельным кабинетом руководителя</p>
+                    </div>
+                </div>
+                
+                <div class="layout-card">
+                    <div class="layout-image"></div>
+                    <div class="layout-info">
+                        <h3 class="layout-title">ОФИС, 200 м²</h3>
+                        <p>Большое офисное пространство для крупных компаний</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Инфраструктура -->
+    <section class="infrastructure">
+        <div class="container">
+            <h2 class="section-title">Инфраструктура</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Район с готовой инфраструктурой</p>
+            
+            <div class="infra-items">
+                <div class="infra-item">
+                    <h3>Транспортная доступность</h3>
+                    <p>1 минута пешком от метро. Подземная и наземная парковки с электрозарядками.</p>
+                </div>
+                
+                <div class="infra-item">
+                    <h3>Торгово-офисный центр</h3>
+                    <p>Крытый переход из метро. Магазины, рестораны, шоу-румы и мероприятия.</p>
+                </div>
+                
+                <div class="infra-item">
+                    <h3>Уникальные пространства</h3>
+                    <p>Комфортные зоны для резидентов бизнес-центра с удобной мебелью.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">БК "Ясенево"</div>
+                    <p>Офисы класса "А" в современном бизнес-квартале</p>
+                </div>
+                
+                <div class="footer-contacts">
+                    <h3>Контакты</h3>
+                    <a href="tel:+74952214022">+7 (495) 221-40-22</a>
+                    <a href="mailto:info@yasenevo-bk.ru">info@yasenevo-bk.ru</a>
+                    <p>Москва, район Ясенево</p>
+                </div>
+                
+                <div class="footer-presentation">
+                    <h3>Презентация</h3>
+                    <button style="margin-top: 10px; padding: 10px 20px; background-color: white; color: #0056b3; border: none; border-radius: 5px; cursor: pointer;">Скачать PDF</button>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 Бизнес-квартал "Ясенево". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
